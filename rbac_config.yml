@@ -1,0 +1,9 @@
+---
+username: xxxx
+password: xxxx
+host: your_rbac_server
+scheme: https
+base_path: api/rbac/v1/
+debugging: true
+verify_ssl: false
+verify_ssl_host: false
