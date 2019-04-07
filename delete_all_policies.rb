@@ -5,7 +5,7 @@ require_relative 'rbac_pagination'
 include RBAC::Paginate
 # setup authorization
 RBACApiClient.configure do |config|
-  hash  = YAML.load_file('./config.yml')
+  hash  = YAML.load_file('./rbac_config.yml')
   hash.keys.each do |key|
     config.send("#{key}=".to_sym, hash[key])
   end
