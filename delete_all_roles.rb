@@ -6,6 +6,8 @@ roles = RBAC::Paginate.call(api_instance, :list_roles, {})
 begin
   roles.each do |role|
     next unless role.name.downcase.start_with?('catalog')
+    next if role.name == 'Catalog User'
+    next if role.name == 'Catalog Administrator'
     #Delete a role in the tenant
     puts "Deleting role #{role.name}"
     api_instance.delete_role(role.uuid)
