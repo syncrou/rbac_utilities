@@ -23,6 +23,7 @@ begin
   result.each do |role|
     puts api_instance.get_role(role.uuid)
   end
+  puts "Found #{result.count} roles"
 rescue RBACApiClient::ApiError => e
   puts "Exception when calling RoleApi->list_roles: #{e}"
 end
